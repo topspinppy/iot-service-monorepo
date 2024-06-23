@@ -53,6 +53,17 @@ Make sure you have Docker and Docker Compose installed on your machine.
 - **Edit Device**: Provides functionality to modify existing device details.
 - **Delete Device**: Allows users to remove devices from the platform.
 
+- Sure, here's an addition regarding the testing status for both backend and frontend components of your IoT platform project:
+
+### Testing
+
+- **Backend Testing**: The backend, built with Node.js and NestJS, currently has a test coverage of 61.72%. This coverage includes unit tests for critical functionalities such as device management operations and API endpoints. Tests are implemented using Jest, a popular testing framework for Node.js applications.
+![CleanShot 2567-06-23 at 22 26 15](https://github.com/topspinppy/iot-service-monorepo/assets/18381211/1d21e4c9-027b-4ec1-96c7-4b7067188d07)
+
+
+- **Frontend Testing**: The frontend, developed with Next.js 14, does not yet have end-to-end (E2E) tests in place due to ongoing development. E2E testing is planned and will be integrated into the project once the core frontend functionalities stabilize. This testing phase will ensure comprehensive testing of user workflows and interactions across the application.
+
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or a pull request in the GitHub repository.
