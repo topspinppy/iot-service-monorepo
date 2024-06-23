@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  iotbofweb:
+    build:
+      context: ./iot-web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - iotbofservice
+    restart: always
+    networks:
+      - mynetwork
+  iotbofservice:
+    image: iotbofservice
+    build:
+      context: ./iot-bof-service
+      dockerfile: Dockerfile
+    ports:
+      - 2000:2000
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/iot-bof-service?retryWrites=true&w=majority
+      - PORT=2000
+      - JWT_ACCESS_TOKEN_SECRET_KEY=eOPbB9EMAoxFDwrZx0M8bJOWiOPCor40y7kfXhRJG7RKe4wmz2QEz98P1WTOzx53
+      - JWT_ACCESS_TOKEN_EXPIRES_IN=1h
+      - JWT_REFRESH_TOKEN_SECRET_KEY=rtpTa5wXRo72wsEHlQM1T5J5OD4PnQOJgwxAoNm85anXaxRUo5nsLUtFmNoSQOtw
+      - JWT_REFRESH_TOKEN_EXPIRES_IN=2d
+      - AUTH_ORIGIN=*
+    command: ['node', 'dist/main']
+    networks:
+      - mynetwork
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+      - ./iot-bof-service/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro  # Mount seeding script
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  mongo-data:

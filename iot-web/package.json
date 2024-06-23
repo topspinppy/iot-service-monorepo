@@ -1,0 +1,35 @@
+{
+  "name": "iot-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "pnpm i && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "start:production": "node server.js"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "@tanstack/react-query": "^5.45.1",
+    "antd": "^5.18.3",
+    "axios": "^1.7.2",
+    "config": "^3.3.11",
+    "dayjs": "^1.11.11",
+    "next": "14.2.4",
+    "notistack": "^3.0.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.52.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
