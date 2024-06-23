@@ -55,7 +55,7 @@ Make sure you have Docker and Docker Compose installed on your machine.
 
 - Sure, here's an addition regarding the testing status for both backend and frontend components of your IoT platform project:
 
-### Testing
+## Testing
 
 - **Backend Testing**: The backend, built with Node.js and NestJS, currently has a test coverage of 61.72%. This coverage includes unit tests for critical functionalities such as device management operations and API endpoints. Tests are implemented using Jest, a popular testing framework for Node.js applications.
 ![CleanShot 2567-06-23 at 22 26 15](https://github.com/topspinppy/iot-service-monorepo/assets/18381211/1d21e4c9-027b-4ec1-96c7-4b7067188d07)
