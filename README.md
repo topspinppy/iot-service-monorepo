@@ -2,6 +2,9 @@
 
 This project is an IoT platform designed for managing devices from a back-office perspective. It includes features for device management such as creating, editing, and deleting devices, all integrated with a MongoDB database and implemented using Node.js, NestJS for the backend, and Next.js 14 for the frontend.
 
+## Architecture
+![image](https://github.com/topspinppy/iot-service-monorepo/assets/18381211/91e29764-2f72-4b6c-a76f-64c37c2896a2)
+
 ## Technology Stack
 
 - **Backend**: Node.js, NestJS (framework)
