@@ -1,4 +1,4 @@
-import { Form, Input, Modal } from "antd";
+import { Form, Input, Modal, Select } from "antd";
 import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { DtoDevice } from "../hooks/useAddDevice";
@@ -20,7 +20,7 @@ function DeviceModal(props: IAddDeviceModalProps) {
     defaultValues: {
       name: '',
       type: '',
-      status: '',
+      status: 'Active',
       location: ''
     }
   })
@@ -92,7 +92,15 @@ function DeviceModal(props: IAddDeviceModalProps) {
           render={({ field }) => {
             return (
               <Form.Item label="Status" layout="vertical">
-                <Input placeholder="Status" {...field} />
+                <Select
+                  defaultValue={field.value}
+                  style={{ width: 120 }}
+                  onChange={field.onChange}
+                  options={[
+                    { value: 'Active', label: 'Active' },
+                    { value: 'Inactive', label: 'Inactive' },
+                  ]}
+                />
               </Form.Item>
             )
           }}
